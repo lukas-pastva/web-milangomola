@@ -8,12 +8,11 @@ RUN a2enmod rewrite && \
     libfreetype6-dev  \
     libjpeg62-turbo-dev  \
     libpng-dev  \
-    libzip-dev \
     sendmail \
     zip && \
 	rm -rf /var/lib/apt/lists/*
 
-RUN docker-php-ext-install mysqli gd zip && \
+RUN docker-php-ext-install gd && \
 	docker-php-ext-configure gd
 
 # Pear mail
